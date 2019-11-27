@@ -30,13 +30,13 @@ def surviving_aliens(aliens, fighting_aliens):
     for index, alien in enumerate(aliens):
         if index not in alien_index:
             aliens_new_state = alien
-            print(f'City:{aliens_new_state.city}, Id:{aliens_new_state.id}')
     return aliens_new_state
 
 def move_aliens(aliens, cities_map):
     for step in range(1):
         fighting_aliens = identify_fighting_aliens(aliens)
         aliens_new_state = surviving_aliens(aliens, fighting_aliens)
-        new_map = destroy_city(cities_map, fighting_aliens)
+        latest_city_map = destroy_city(cities_map, fighting_aliens)
         for alien in aliens:
-            alien.city = random.choice(cities_map[alien.city])
+            alien.city = random.choice(cities_map[alien.city])  
+    return latest_city_map

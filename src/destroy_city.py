@@ -1,7 +1,6 @@
 import copy
 
 def remove_city_references(cities_map, fighting_aliens):
-    print('fighting_aliens: ', fighting_aliens)
     latest_cities_map = copy.deepcopy(cities_map)
 
     def find_references(city_name):
@@ -40,3 +39,4 @@ def destroy_city(cities_map, fighting_aliens):
     latest_city_map = remove_city_references(cities_map, fighting_aliens)
     latest_city_map = remove_city(latest_city_map, fighting_aliens)
     print_destroyed_cities(fighting_aliens)
+    return latest_city_map
