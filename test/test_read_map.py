@@ -10,3 +10,4 @@ def test_extract_neighbors():
 
 def test_extract_directions():
     assert extract_directions('Foo north=Bar west=Baz south=Qu-ux') == {'Bar':'north', 'Baz':'west', 'Qu-ux':'south'}
+    assert extract_directions('Bar south=Foo west=Bee') == {'Foo':'south', 'Bee':'west'}
