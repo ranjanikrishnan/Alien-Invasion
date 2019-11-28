@@ -34,13 +34,14 @@
 
 ` python src/alien_invasion.py ./input/input_2.txt 5 `
 
+> Tested on python version 3.6
 
 ## Assumptions
 
 - City names will never contain numeric characters.
 - In the input file, if there's a city A which has a road to B, assume that there is also a road from city B to A.
 - There can be more than 2 aliens in a city which causes them to kill themselves and the city is destroyed.
-
+- When the aliens are unleashed they could end up fighting before their first move.
 
 ## Demo
 
@@ -63,5 +64,5 @@ All cities destroyed!
 - All the tests are under the test folder.
 - Following is a sample run of a test.
 
-pytest test/test_read_map.py
+`pytest test/test_read_map.py`
 
