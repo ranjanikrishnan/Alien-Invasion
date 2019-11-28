@@ -1,5 +1,5 @@
 import random
-from alien import Alien
+from src.alien import Alien
 
 def unleash_aliens(num_aliens, cities_map):
     aliens = []

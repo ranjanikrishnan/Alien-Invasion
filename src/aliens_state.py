@@ -1,6 +1,6 @@
 from collections import Counter
 import random
-from destroy_city import destroy_city
+from generate_io import generate_map, print_output
 
 def identify_fighting_aliens(aliens):
     cities = []
@@ -26,17 +26,8 @@ def surviving_aliens(aliens, fighting_aliens):
     aliens_new_state = []
     for index, alien in enumerate(aliens):
         if alien.city in fighting_aliens.keys():
-            alien_index.append(index) 
+            alien_index.append(index)
     for index, alien in enumerate(aliens):
         if index not in alien_index:
-            aliens_new_state = alien
+            aliens_new_state.append(alien)
     return aliens_new_state
-
-def move_aliens(aliens, cities_map):
-    for step in range(1):
-        fighting_aliens = identify_fighting_aliens(aliens)
-        aliens_new_state = surviving_aliens(aliens, fighting_aliens)
-        latest_city_map = destroy_city(cities_map, fighting_aliens)
-        for alien in aliens:
-            alien.city = random.choice(cities_map[alien.city])  
-    return latest_city_map

@@ -24,7 +24,7 @@ def remove_city(cities_map, fighting_aliens):
         if destroyed_city in cities_map:
             del cities_map[destroyed_city]
     return cities_map
-
+    
 def print_destroyed_cities(fighting_aliens):
     for city, alien_ids in fighting_aliens.items():
         alien_id_to_print = ''
